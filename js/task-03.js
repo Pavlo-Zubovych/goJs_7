@@ -16,25 +16,30 @@ const images = [
   },
 ];
 
-console.log(images[0].alt);
+const gallaryRef = document.querySelector('#gallery');
+const createGallery = images.reduce((totalString, element) => {
+  return (totalString += `<li><img src="${element.url}" alt="${element.alt}"/></li>`);
+}, '');
+gallaryRef.insertAdjacentHTML('afterbegin', createGallery);
 
-const createItemGalery = (image) => {
-  const containerLiRef = document.createElement('li');
+// console.log(images[0].alt);
 
-  containerLiRef.textContent = `<img src="${image.url}" alt="${image.alt}">`;
-  // const imageRef = document.createElement(img);
+// const createItemGalery = (image) => {
+//   const containerLiRef = document.createElement('li');
 
-  // console.log(containerLiRef);
+//   const imageRef = document.createElement('img');
+//   imageRef.setAttribute('src', `'${image.url}'`);
+//   imageRef.setAttribute('alt', `'${image.alt}'`);
 
-  //apend ?
+//   console.log(imageRef); // <img src="https://placeimg.com/640/480/nature" alt="nature">
 
-  return containerLiRef;
-};
+//   return containerLiRef;
+// };
 
-const ItemGalery = images.map((image) => createItemGalery(image));
-console.log(ItemGalery);
+// const ItemGalery = images.map((image) => createItemGalery(image));
+// // console.loge(ItemGalery);
 
-const galleryRef = document.querySelector('#gallery');
-console.log(galleryRef);
+// const galleryRef = document.querySelector('#gallery');
+// console.log(galleryRef);
 
-galleryRef.append(...ItemGalery);
+// galleryRef.append(...ItemGalery);
