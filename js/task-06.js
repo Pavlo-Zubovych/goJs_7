@@ -31,7 +31,6 @@ const checkInput = (event) => {
   }
 
   //перевірка на відповідність довжени inputa
-
   const userInputLength = event.target.value.length;
   const inputDataLength = event.target.getAttribute('data-length');
 
